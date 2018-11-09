@@ -1,0 +1,2 @@
+# TypescriptUnderstanding
+Understanding Typescript standalone
