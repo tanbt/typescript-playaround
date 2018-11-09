@@ -9,8 +9,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "lite-server",
-    "compile": ""
+    "start": "lite-server --baseDir=\"public\"",
+    "compile": "tsc"
   },
   "author": "Tan Bui",
   "license": "ISC"
