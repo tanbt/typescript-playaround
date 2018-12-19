@@ -1,3 +1,5 @@
+import { Util } from './util/doc';
+
 interface NumberValue {
     value: number;
     description: string
@@ -22,8 +24,9 @@ let a: NumberValue = {
 };
 
 let b: NumberValue = {
-    value: 6,
+    value: 4,
     description: "sth else"
 };
 
-console.log(Calculator.SumAbs( a, b ));
+//----------------------------
+Util.output(Calculator.SumAbs( a, b ));
