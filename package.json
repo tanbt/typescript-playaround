@@ -16,7 +16,7 @@
   },
   "scripts": {
     "test": "mocha -r ts-node/register test/**/*.test.ts",
-    "serve": "lite-server --baseDir=\"public\"",
+    "serve": "lite-server",
     "tswatch": "tsc --watch",
     "start": "npm-run-all --parallel tswatch serve"
   },
