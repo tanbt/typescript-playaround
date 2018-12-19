@@ -5,14 +5,20 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "chai": "^4.2.0",
     "lite-server": "^2.4.0",
-    "npm-run-all": "^4.1.5"
+    "mocha": "^5.2.0",
+    "npm-run-all": "^4.1.5",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha -r ts-node/register test/**/*.test.ts",
     "serve": "lite-server --baseDir=\"public\"",
     "tswatch": "tsc --watch",
-    "start" : "npm-run-all --parallel tswatch serve"
+    "start": "npm-run-all --parallel tswatch serve"
   },
   "author": "Tan Bui",
   "license": "ISC"
