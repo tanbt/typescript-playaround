@@ -4,3 +4,5 @@ export default class Calculator {
         return c;
     }
 }
+
+console.log(Calculator.Sum(2,3));
