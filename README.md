@@ -10,3 +10,4 @@ Resource: https://www.udemy.com/understanding-typescript
 
 ## References
 * TypeScript - Javascript [playground](https://www.typescriptlang.org/play/index.html)
+* [Write your own Virtual DOM](https://medium.com/@deathmood/how-to-write-your-own-virtual-dom-ee74acc13060)

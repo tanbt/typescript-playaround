@@ -29,4 +29,5 @@ let b: NumberValue = {
 };
 
 //----------------------------
-Util.output(Calculator.SumAbs( a, b ));
+Util.outputElement(Util.createElement(Util.generate()));
+console.log(Util.createElement(Util.generate()));
