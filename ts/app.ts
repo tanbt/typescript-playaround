@@ -12,7 +12,7 @@ export default class Calculator {
         return c;
     }
 
-    static SumAbs(a: NumberValue, b: NumberValue) : number {
+    static SumAbs(a: NumberValue, b: NumberValue): number {
         let c = a.value + b.value;
         return c;
     }
@@ -29,5 +29,5 @@ let b: NumberValue = {
 };
 
 //----------------------------
-Util.outputElement(Util.createElement(Util.generate()));
-console.log(Util.createElement(Util.generate()));
+Util.init();
+Util.outputElement(Util.createElement(Util.getNode1()));
