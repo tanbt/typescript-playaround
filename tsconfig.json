@@ -1,5 +1,6 @@
 {
     "compilerOptions": {
+        "module":"es2015",
         "target": "es3",
         "noImplicitAny": false,
         "sourceMap": true,
