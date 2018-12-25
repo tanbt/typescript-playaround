@@ -5,13 +5,6 @@
 export class Util {
     static content = document.getElementById('output');
 
-    static init() {
-        const $reload = document.getElementById('reload');
-        $reload.addEventListener('click', () => {
-            Util.updateElement(Util.content, Util.getNode2(), Util.getNode1());
-        });
-    }
-
     static outputText(data: any) {
         Util.content.innerHTML = data;
     }
@@ -19,26 +12,6 @@ export class Util {
     static outputElement(data: any) {
         const e = document.getElementById('output');
         Util.content.appendChild(data);
-    }
-
-    static getNode1() {
-        const a = (
-            Util.h('ul', { className: 'list' },
-                Util.h('li', {}, 'item 1'),
-                Util.h('li', {}, 'item 2'),
-            )
-        )
-        return a;
-    }
-
-    static getNode2() {
-        const a = (
-            Util.h('ul', { className: 'list' },
-                Util.h('li', {}, 'item 1'),
-                Util.h('li', {}, 'item 3'),
-            )
-        )
-        return a;
     }
 
     static h(type, props, ...children) {

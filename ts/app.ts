@@ -1,4 +1,5 @@
 import { Util } from './util/doc';
+import { oldNode, newNode } from './util/demo-nodes';
 
 interface NumberValue {
     value: number;
@@ -29,5 +30,10 @@ let b: NumberValue = {
 };
 
 //----------------------------
-Util.init();
-Util.outputElement(Util.createElement(Util.getNode1()));
+Util.outputElement(Util.createElement(oldNode));
+
+const $reload = document.getElementById('reload');
+$reload.addEventListener('click', () => {
+    //console.log(oldNode, newNode);
+    Util.updateElement(Util.content, newNode, oldNode);
+});
