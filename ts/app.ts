@@ -2,7 +2,8 @@ import { Util } from './util/doc';
 
 interface NumberValue {
     value: number;
-    description: string
+    description?: string,
+    other?: string
 }
 
 export default class Calculator {
@@ -25,7 +26,7 @@ let a: NumberValue = {
 
 let b: NumberValue = {
     value: 4,
-    description: "sth else"
+    other: "other"
 };
 
 //----------------------------
