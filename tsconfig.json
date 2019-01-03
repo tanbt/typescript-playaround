@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "target": "es3",
+        "module": "commonjs",
         "noImplicitAny": false,
         "sourceMap": true,
         "outDir": "js"
