@@ -3,6 +3,7 @@ import Calculator from '../ts/app';
 
 describe('calculator', () => {
     it('add', () => {
-        expect(5).equal(5);
+        let result = Calculator.Sum(2,3);
+        expect(result).equal(5);
     });
 });

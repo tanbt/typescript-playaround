@@ -1,4 +1,4 @@
-import { Util } from './util/doc';
+// import { Util } from './util/doc';
 
 interface NumberValue {
     value: number;
@@ -30,4 +30,4 @@ let b: NumberValue = {
 };
 
 //----------------------------
-Util.output(Calculator.SumAbs( a, b ));
+// Util.output(Calculator.SumAbs( a, b ));

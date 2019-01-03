@@ -18,7 +18,7 @@
     "webpack-cli": "^3.1.2"
   },
   "scripts": {
-    "test": "mocha -r ts-node/register test/**/*.test.ts",
+    "test": "mocha js/test/**/*.test.js",
     "serve": "lite-server",
     "build": "webpack --watch",
     "start": "npm-run-all --parallel build serve"
