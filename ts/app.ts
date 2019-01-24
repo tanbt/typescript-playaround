@@ -1,4 +1,5 @@
 // import { Util } from './util/doc';
+import {Generator} from './util/generator';
 
 interface NumberValue {
     value: number;
@@ -14,7 +15,9 @@ export default class Calculator {
     }
 
     static SumAbs(a: NumberValue, b: NumberValue) : number {
-        let c = a.value + b.value;
+        let n = Generator.getId();
+        n = n+999;
+        let c = a.value + b.value + n;
         return c;
     }
 }
@@ -31,3 +34,11 @@ let b: NumberValue = {
 
 //----------------------------
 // Util.output(Calculator.SumAbs( a, b ));
+console.log(Calculator.SumAbs( a, b ));
+console.log(Generator.getId());
+console.log(Generator.getId());
+console.log(Generator.getId());
+Generator.reset()
+console.log(Generator.getId());
+console.log(Generator.getId());
+
