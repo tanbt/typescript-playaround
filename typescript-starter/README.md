@@ -23,7 +23,25 @@ npm i -D jest ts-jest @types/jest
 * Add npm script to run `jest`.
 * Fix tsconfig so it `rootDir` is the `src` folder, also add `exclude` for `node_modules` and `*.spec.ts` files
 
-> Setup debugger
+> Setup [VSCode debugger for TS](https://code.visualstudio.com/docs/typescript/typescript-debugging)
+* in tsconfig, add `"sourceMap": true,`
+* Create `./vscode/launch.json`. Make sure `outFiles` matchs `outDir` in tsconfig
+```
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch TS",
+      "program": "${workspaceFolder}/src/index.ts",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    }
+  ]
+}
+```
+
 
 > (Optional) Optimize the JS file with webpack bundling
 The genrated JS files are not yet optimized.
