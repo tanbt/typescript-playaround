@@ -40,6 +40,15 @@ node --experimental-modules ./dist/index.js
 
 If you compile as ES6 module but run without experimental flag, the will be syntax error such as `SyntaxError: Cannot use import statement outside a module`.
 
+> Run with nodeamon watch mode
+```
+npm i -D ts-node nodemon
+# Add package.json script
+{
+  "dev": "nodemon ./src/index.ts",
+}
+```
+
 # Reference
 * https://levelup.gitconnected.com/tdd-with-typescript-and-jest-starter-project-cca94fd089f5
 
