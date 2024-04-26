@@ -19,6 +19,9 @@ Now we can run `npm run tsc` then `npm start`
 ```
 npm i -D jest ts-jest @types/jest
 ```
+* Add `jest.config.js` as in this project.
+* Add npm script to run `jest`.
+* Fix tsconfig so it `rootDir` is the `src` folder, also add `exclude` for `node_modules` and `*.spec.ts` files
 
 > Setup debugger
 
