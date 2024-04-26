@@ -8,5 +8,11 @@ Resource: https://www.udemy.com/understanding-typescript
 * Run `tsc` to compile type
 * Run `npm start` to run the development server (lite-server)
 
+## Update verions for all deps
+```
+npx npm-check-updates -u
+npm i
+```
+
 ## References
 * TypeScript - Javascript [playground](https://www.typescriptlang.org/play/index.html)

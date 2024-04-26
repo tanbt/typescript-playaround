@@ -5,17 +5,17 @@
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
-    "@types/chai": "^4.1.7",
-    "@types/mocha": "^5.2.5",
-    "chai": "^4.2.0",
-    "lite-server": "^2.4.0",
-    "mocha": "^5.2.0",
+    "@types/chai": "^4.3.14",
+    "@types/mocha": "^10.0.6",
+    "chai": "^5.1.0",
+    "lite-server": "^2.6.1",
+    "mocha": "^10.4.0",
     "npm-run-all": "^4.1.5",
-    "ts-loader": "^5.3.1",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.2.2",
-    "webpack": "^4.28.0",
-    "webpack-cli": "^3.1.2"
+    "ts-loader": "^9.5.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4"
   },
   "scripts": {
     "test": "mocha js/test/**/*.test.js",
