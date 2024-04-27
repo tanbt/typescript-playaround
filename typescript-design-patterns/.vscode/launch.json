@@ -7,8 +7,8 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Start TS",
-      "program": "${workspaceFolder}\\src\\index.ts",
+      "name": "Launch Index",
+      "program": "${workspaceFolder}/src/index.ts",
       "outFiles": [
         "${workspaceFolder}/dist/**/*.js"
       ]

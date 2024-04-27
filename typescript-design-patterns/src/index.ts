@@ -1,5 +1,5 @@
-import { visitorDemo } from "./visitor/visitorDemo";
-visitorDemo();
+// import { visitorDemo } from "./visitor/visitorDemo";
+// visitorDemo();
 
 // import { templateMethodDemo } from "./template-method/templateMethodDemo";
 // templateMethodDemo();
@@ -55,5 +55,5 @@ visitorDemo();
 // import { factoryDemo } from "./factory/factory-demo";
 // factoryDemo();
 
-//import { singletonDemo } from './singleton/singleton-demo';
-//singletonDemo();
+import { singletonDemo } from './singleton/singleton-demo';
+singletonDemo();
