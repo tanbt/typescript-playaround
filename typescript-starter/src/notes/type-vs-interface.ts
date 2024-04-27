@@ -1,12 +1,12 @@
 // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases
-type Todo = {
+type Todo = { // is an alias of multiple types
   userId: number;
   id: number;
   title: string;
   completed: boolean;
 };
 
-interface iTodo {
+interface iTodo { // interface is object structure
   userId: number;
   id: number;
   title: string;
@@ -15,7 +15,7 @@ interface iTodo {
 
 // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces
 // the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
-interface iTodoExtra extends iTodo {
+interface iTodoExtra extends iTodo { // can extend multiple interfaces
   note: string;
 }
 
@@ -23,6 +23,7 @@ interface Student {
   id: number;
   name: string;
 }
+type StudentTodo = Todo & Student; // intersection type, just like interface extending
 
 fetch("https://jsonplaceholder.typicode.com/todos/1")
   .then((response) => response.json())

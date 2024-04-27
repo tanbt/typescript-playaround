@@ -15,6 +15,7 @@ const myFunc: Function = async function (
 myFunc(1, "hello").then((res: string) =>
   console.log("This will be executed async:", res)
 );
+const values: ReadonlyArray<string> = new Array<string>("hello", "world");
 
 // Union Types: a new type which is one of the given types
 const age: number | string = "";
@@ -48,9 +49,6 @@ console.log("enum:", Direction.Down == 2); // 1
 // never vs void: a function that doesn't explicitly return anything will have a return type of void, not never.
 // The never type is reserved for functions that never return normally, either because they throw an error or enter an infinite loop.
 
-/////////////// Utility Types: utility types is created by transformations of common types.
-// https://www.typescriptlang.org/docs/handbook/utility-types.html
-
 ////////// Object types
 // https://www.typescriptlang.org/docs/handbook/2/objects.html
 //  https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures
@@ -62,7 +60,7 @@ interface GeneralPerson {
   123: string;
 }
 interface GeneralPerson1 {
-  [index: string | number]: string | number | iTodo;
+  [index: string | number]: string | number | iTodo | any;
   name: string;
   123: number;
 }
@@ -73,3 +71,7 @@ const mPerson: GeneralPerson = {
   123: "123",
 };
 console.log("GeneralPerson:", mPerson);
+
+
+/////////////// Utility Types: utility types is created by transformations of common types.
+// https://www.typescriptlang.org/docs/handbook/utility-types.html
