@@ -12,15 +12,18 @@ const myFunc: Function = async function (
 ): Promise<string> {
   return `${arg1} ${arg2}`;
 };
-myFunc(1, "hello").then((res: string) => console.log("This will be executed async:", res));
+myFunc(1, "hello").then((res: string) =>
+  console.log("This will be executed async:", res)
+);
 
 // Union Types: a new type which is one of the given types
 const age: number | string = "";
 
 // Type Aliases: a way to give a type a name
-type Point = {
+export type Point = {
   x: number;
   y: number;
+  type?: "AA" | "BB"; // Discriminated unions
 };
 
 // Type Assertions or type cast
@@ -46,3 +49,6 @@ console.log("enum:", Direction.Down == 2); // 1
 
 // https://www.typescriptlang.org/docs/handbook/2/objects.html
 //  https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures
+
+// never vs void: a function that doesn't explicitly return anything will have a return type of void, not never.
+// The never type is reserved for functions that never return normally, either because they throw an error or enter an infinite loop.
