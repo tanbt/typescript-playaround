@@ -22,7 +22,7 @@ const getFirstLambda = async <T, P>(
   return data[0];
 };
 
-// generic interface
+// generic interface and class has similar syntax
 interface GenericIdentityFn<T> {
   prop1: T;
   func1: (arg: T) => T;
@@ -46,9 +46,8 @@ console.log(multiply(10, 1, 2, 3, 4));
 //////// Array and object destructing ///////////
 const myArr = [1, 2, 3, 4, 5];
 const [first, second, ...rest] = myArr;
-console.log(first, second, rest);   // 1    2      [3, 4, 5]
+console.log(first, second, rest); // 1    2      [3, 4, 5]
 
 const myObj = { a: 1, b: 2, c: 3, d: 4, e: 5 };
 const { a, b, ...restObj } = myObj;
-console.log(a, b, restObj);         // 1    2      { c: 3, d: 4, e: 5 }
-
+console.log(a, b, restObj); // 1    2      { c: 3, d: 4, e: 5 }

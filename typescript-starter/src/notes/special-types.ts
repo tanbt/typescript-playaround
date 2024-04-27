@@ -72,6 +72,13 @@ const mPerson: GeneralPerson = {
 };
 console.log("GeneralPerson:", mPerson);
 
+type GeneralTypeDirection = { // index signatures for type
+  [key: string]: boolean | Direction;
+};
+const d: GeneralTypeDirection = {
+  aa: true,
+  bb: Direction.Down,
+};
 
 /////////////// Utility Types: utility types is created by transformations of common types.
 // https://www.typescriptlang.org/docs/handbook/utility-types.html
