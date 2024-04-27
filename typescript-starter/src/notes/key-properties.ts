@@ -1,3 +1,5 @@
+import { Student } from "./type-vs-interface";
+
 //////// keyof
 type Point = {
   x: number;
@@ -33,3 +35,21 @@ type Age = Person["age"]; // then Age is number
 
 // conditional types
 type ConditionalType = cPoint extends Point ? number : string;
+
+// map and record
+const stdnn: Record<string, Student> = {
+  bobby: { id: 1, name: "Bob" },
+  johny: { id: 2, name: "John" },
+};
+const stdnnKeys = Object.keys(stdnn);
+console.log("stdnn keys: ", stdnnKeys, "stdnn values: ", Object.values(stdnn));
+const jsMap: Map<Point, Student> = new Map<Point, Student>([]);
+
+jsMap.set({ x: 1, y: 2 }, { id: 1, name: "Bob" });
+const jsMapKeys = Array.from(jsMap.keys());
+console.log(
+  "jsMap keys: ",
+  jsMapKeys,
+  "jsMap values: ",
+  Array.from(jsMap.values())
+);

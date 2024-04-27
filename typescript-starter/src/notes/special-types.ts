@@ -1,6 +1,8 @@
 // https://www.typescriptlang.org/docs/handbook/2/everyday-types.html
 // The primitives: string, number, boolean
 
+import { Todo, iTodo } from "./type-vs-interface";
+
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
 const myArr: number[] = [1, 2, 3];
 const myTupple: [number, string] = [1, "hello"];
@@ -25,6 +27,10 @@ export type Point = {
   x: number;
   y: number;
   type?: "AA" | "BB"; // Discriminated unions
+};
+type Student = {
+  id: number;
+  name: string;
 };
 
 // Type Assertions or type cast
@@ -72,7 +78,8 @@ const mPerson: GeneralPerson = {
 };
 console.log("GeneralPerson:", mPerson);
 
-type GeneralTypeDirection = { // index signatures for type
+type GeneralTypeDirection = {
+  // index signatures for type
   [key: string]: boolean | Direction;
 };
 const d: GeneralTypeDirection = {
@@ -82,3 +89,28 @@ const d: GeneralTypeDirection = {
 
 /////////////// Utility Types: utility types is created by transformations of common types.
 // https://www.typescriptlang.org/docs/handbook/utility-types.html
+type PartialPoint = Partial<Point>; // all properties in a type or interface are optional
+type RequiredPoint = Required<Point>; // all properties in a type or interface are required
+type ReadonlyPoint = Readonly<GeneralPerson>;
+const stdnn: Record<string, Student> = {
+  // key must be string, number, or symbol
+  bobby: { id: 1, name: "Bob" },
+  johny: { id: 2, name: "John" },
+};
+// in JS Map, key can be anything
+const jsMap: Map<Point, Student> = new Map<Point, Student>([]);
+jsMap.set({ x: 1, y: 2 }, { id: 1, name: "Bob" });
+
+type ReviewTodo = Pick<iTodo, "title" | "completed">; // pick only title and completed from iTodo
+type TodoData = Omit<Todo, "title" | "completed">; // exclude userId from Todo. Reverse of Pick
+
+type T0 = Exclude<"a" | "b" | "c", "a">; // T0 = "b" | "c"
+type T1 = Extract<"a" | "b" | "c", "a" | "f" | "c">; // T1 = "a" | "c"
+
+function f1(a: number, b: string): { x: number; y: number } {
+  return { x: 1, y: 2 };
+}
+// define a type based on the params of a function
+type ParamTypes = Parameters<typeof f1>; // ParamTypes = [number, string]
+// define a type based on the type of a function's return
+type ReturnTypes = ReturnType<typeof f1>; // ReturnTypes = { x: number; y: number }
