@@ -3,6 +3,7 @@
 import { Point } from "./special-types";
 
 /////////// Generic function with onstraint generic type ///////////
+// https://www.typescriptlang.org/docs/handbook/2/generics.html
 function getFirst<TYPE extends Point>(data: TYPE[]): TYPE | never {
   if (data.length < 1) {
     throw new Error("Array is empty");

@@ -48,5 +48,5 @@ fetch("https://jsonplaceholder.typicode.com/todos/1")
     console.log(td);
   });
 
-  // In general, use typeof when you want to know the type of a primitive or a function,
-  // and use instanceof when you want to know if an object is an instance of a certain class.
+// In general, use typeof when you want to know the type of a primitive or a function,
+// and use instanceof when you want to know if an object is an instance of a certain class.

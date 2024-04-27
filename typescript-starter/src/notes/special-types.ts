@@ -44,11 +44,32 @@ enum Direction {
   Right,
 }
 console.log("enum:", Direction.Down == 2); // 1
-// Utility Types: utility types is created by transformations of common types.
-// https://www.typescriptlang.org/docs/handbook/utility-types.html
-
-// https://www.typescriptlang.org/docs/handbook/2/objects.html
-//  https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures
 
 // never vs void: a function that doesn't explicitly return anything will have a return type of void, not never.
 // The never type is reserved for functions that never return normally, either because they throw an error or enter an infinite loop.
+
+/////////////// Utility Types: utility types is created by transformations of common types.
+// https://www.typescriptlang.org/docs/handbook/utility-types.html
+
+////////// Object types
+// https://www.typescriptlang.org/docs/handbook/2/objects.html
+//  https://www.typescriptlang.org/docs/handbook/2/objects.html#index-signatures
+// When not yet know all the names of properties ahead of time, but know the type of those properties' values.
+// NOTE: all the properties' values must be the same type, we can use union type to define multiple types.
+interface GeneralPerson {
+  [index: string]: string;
+  name: string;
+  123: string;
+}
+interface GeneralPerson1 {
+  [index: string | number]: string | number | iTodo;
+  name: string;
+  123: number;
+}
+const mPerson: GeneralPerson = {
+  0: "hello",
+  somePropName: "world",
+  name: "John",
+  123: "123",
+};
+console.log("GeneralPerson:", mPerson);
