@@ -2,7 +2,7 @@ import { EventListener } from "./EventListener";
 
 export class ActivationListener extends EventListener {
 
-  update(): void {
+  onUpdate(): void {
     console.log("Check for Editor activation...")
   }
 

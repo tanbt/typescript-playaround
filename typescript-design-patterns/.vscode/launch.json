@@ -9,9 +9,8 @@
       "request": "launch",
       "name": "Launch Index",
       "program": "${workspaceFolder}/src/index.ts",
-      "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
-      ]
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"],
+      "preLaunchTask": "build" // This is the label of the task we defined earlier
     }
   ]
 }

@@ -5,7 +5,8 @@
   "main": ".src/index.ts",
   "scripts": {
     "serve": "lite-server",
-    "build": "webpack --watch",
+    "build": "webpack",
+    "build-watch": "webpack --watch",
     "start": "npm-run-all --parallel build serve"
   },
   "repository": {

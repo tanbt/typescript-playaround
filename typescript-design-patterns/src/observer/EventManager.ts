@@ -6,7 +6,7 @@ export class EventManager {
 
   public notify(eventType: string) {
     const listeners: EventListener[] = this._map.get(eventType);
-    listeners.forEach(l => l.update());
+    listeners.forEach(l => l.onUpdate());
   }
 
   public subscribe(eventType: string, el: EventListener) {

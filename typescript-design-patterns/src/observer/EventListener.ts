@@ -4,5 +4,5 @@ export abstract class EventListener {
 
   constructor(protected _editor: Editor) { };
 
-  abstract update(): void;
+  abstract onUpdate(): void;
 }

@@ -11,7 +11,7 @@ export const proxyDemo = () => {
     });
   }
 
-  // demo later requests
+  // demo delayed requests
   setTimeout(() => {
     for (let i = 1; i <= 8; i++) {
       const id = i % 5;
