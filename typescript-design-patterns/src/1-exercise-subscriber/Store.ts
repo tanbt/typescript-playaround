@@ -1,9 +1,10 @@
-import { iSubscriber } from "./types";
+import { AbstractSubscriber } from "./AbstractSubscriber";
+import { SubscriberInterface } from "./types";
 
 class Store {
   private static _instance: Store = new Store();
   private _state: Record<string, any> = {};
-  private _subscribers: iSubscriber[] = [];
+  private _subscribers: SubscriberInterface[] = [];
 
   private constructor() {
     if (Store._instance) {
@@ -20,13 +21,21 @@ class Store {
   }
   public setState<T>(key: string, value: T): void {
     this._state[key] = value;
-    this.notify(key);
+    this.notify(key, value);
   }
 
-  private notify(key: string) {
+  public subscribe(subscriber: SubscriberInterface): void {
+    if (this._state.hasOwnProperty(subscriber.stateName)) {
+      this._subscribers.push(subscriber);
+    } else {
+      throw new Error(`State ${subscriber.stateName} does not exist`);
+    }
+  }
+
+  private notify(key: string, value: any) {
     this._subscribers
       .filter((s) => s.stateName === key)
-      .forEach((s) => s.onUpdate);
+      .forEach((s) => s.onUpdate(value));
   }
 }
 

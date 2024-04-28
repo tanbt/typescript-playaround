@@ -9,7 +9,7 @@ export type CartItem = {
   price: number;
 };
 
-export interface iSubscriber {
+export interface SubscriberInterface {
   stateName: string;
-  onUpdate: () => void;
+  onUpdate: (data: any) => void;
 }

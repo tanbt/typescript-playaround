@@ -1,3 +1,4 @@
+import { AuthSubscriber } from "./AuthSubscriber";
 import Store from "./Store";
 import { Auth, CartItem } from "./types";
 
@@ -14,4 +15,10 @@ export const subscriberDemo = () => {
 
   const auth = Store.instance.getState("auth");
   console.log("auth", auth);
+  const authSubs = new AuthSubscriber();
+  Store.instance.subscribe(authSubs);
+  Store.instance.setState<Auth>("auth", {
+    token: "newtok#n",
+    username: "Changed Username",
+  });
 };
