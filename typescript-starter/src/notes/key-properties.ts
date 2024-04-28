@@ -41,6 +41,7 @@ const stdnn: Record<string, Student> = {
   bobby: { id: 1, name: "Bob" },
   johny: { id: 2, name: "John" },
 };
+stdnn["tanny"] = { id: 3, name: "Tanny" };
 const stdnnKeys = Object.keys(stdnn);
 console.log("stdnn keys: ", stdnnKeys, "stdnn values: ", Object.values(stdnn));
 const jsMap: Map<Point, Student> = new Map<Point, Student>([]);

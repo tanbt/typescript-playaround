@@ -12,3 +12,5 @@ Debugging in browser is also available.
 
 ## References
 * TS debugging in VScode https://code.visualstudio.com/docs/typescript/typescript-debugging
+* https://sourcemaking.com/design_patterns
+* https://www.oodesign.com/

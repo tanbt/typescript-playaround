@@ -1,9 +1,17 @@
-/*
-Practice: create a unique store to manage the app's state
-* the store can have a flexible number of states
-* the store emits events when a state changes
-* subscriber can subscribe to the store to get a state and react to changes of that state
-* state is immutable (every change creates a deep-cloned new state)
-* the store can be undo to its previous state
-* the store can be undo to a state at a specific time
-*/
+import Store from "./Store";
+import { Auth, CartItem } from "./types";
+
+export const subscriberDemo = () => {
+  Store.instance.setState<Auth>("auth", {
+    token: "someauthtok#n",
+    username: "John",
+  });
+  Store.instance.setState<CartItem[]>("cart", [
+    { id: 1, name: "item1", price: 100 },
+    { id: 2, name: "item2", price: 200 },
+    { id: 3, name: "item3", price: 300 },
+  ]);
+
+  const auth = Store.instance.getState("auth");
+  console.log("auth", auth);
+};

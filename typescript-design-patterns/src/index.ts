@@ -10,8 +10,8 @@
 // import { stateDemo } from "./state/state-demo";
 // stateDemo();
 
-import { observerDemo } from "./observer/observer-demo";
-observerDemo();
+// import { observerDemo } from "./observer/observer-demo";
+// observerDemo();
 
 // import { mementoDemo } from "./memento/mementor-demo";
 // mementoDemo();
@@ -57,3 +57,6 @@ observerDemo();
 
 // import { singletonDemo } from './singleton/singleton-demo';
 // singletonDemo();
+
+import { subscriberDemo } from "./1-exercise-subscriber/subscriber-demo";
+subscriberDemo();
