@@ -7,6 +7,13 @@ import { Todo, iTodo } from "./type-vs-interface";
 const myArr: number[] = [1, 2, 3];
 const myTupple: [number, string] = [1, "hello"];
 const myTupple1: [number, string[]] = [1, ["hello", "world"]];
+console.log('changing array...');
+myArr.push(4);
+console.log(myArr.pop(), myArr);
+myArr.unshift(0);
+console.log(myArr.shift(), myArr);
+console.log('end changing array...');
+
 // `any` vs `unknown`: any is to skip type check, unknown is to skip type check but have to check `typeof` before using it
 const myFunc: Function = async function (
   arg1: number,
