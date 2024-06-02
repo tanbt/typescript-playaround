@@ -15,3 +15,6 @@ create a singleton store class
 use index signature to store new states
 support adding/removing actions/reducers
 support adding subscriber
+
+# Reference
+* Similar to https://github.com/tanbt/interview-collection/tree/main/smartly-candidate-khoalun-interview-coding-exercise

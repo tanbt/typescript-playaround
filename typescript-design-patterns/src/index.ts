@@ -58,5 +58,8 @@
 // import { singletonDemo } from './singleton/singleton-demo';
 // singletonDemo();
 
-import { subscriberDemo } from "./1-exercise-subscriber/subscriber-demo";
-subscriberDemo();
+// import { subscriberDemo } from "./1-exercise-subscriber/subscriber-demo";
+// subscriberDemo();
+
+import { solidExample } from "./2-solid-example/solid-example-demo";
+solidExample();
