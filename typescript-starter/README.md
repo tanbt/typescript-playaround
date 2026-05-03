@@ -27,11 +27,15 @@ npm i -D jest ts-jest @types/jest
 ```
 * Add `jest.config.js` as in this project.
 * Add npm script to run `jest`.
-* Fix tsconfig so it `rootDir` is the `src` folder, also add `exclude` for `node_modules` and `*.spec.ts` files
+* Fix tsconfig so `rootDir` is the `src` folder, also add `exclude` for `node_modules` and `*.spec.ts` files.
+* Add `"jest"` to the `types` array in tsconfig.json so TypeScript can resolve Jest globals (`describe`, `test`, `expect`):
+  ```json
+  "types": ["node", "jest"]
+  ```
 
 > Setup [VSCode debugger for TS](https://code.visualstudio.com/docs/typescript/typescript-debugging)
 * in tsconfig, add `"sourceMap": true,`
-* Create `./vscode/launch.json`. Make sure `outFiles` matchs `outDir` in tsconfig
+* Create `./.vscode/launch.json`. Make sure `outFiles` matches `outDir` in tsconfig
 ```
 {
   "version": "0.2.0",
@@ -39,7 +43,15 @@ npm i -D jest ts-jest @types/jest
     {
       "type": "node",
       "request": "launch",
-      "name": "Launch TS",
+      "name": "Launch current",
+      "program": "${file}",
+      "preLaunchTask": "tsc: build - tsconfig.json",
+      "outFiles": ["${workspaceFolder}/dist/**/*.js"]
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch index",
       "program": "${workspaceFolder}/src/index.ts",
       "preLaunchTask": "tsc: build - tsconfig.json",
       "outFiles": ["${workspaceFolder}/dist/**/*.js"]
@@ -47,10 +59,10 @@ npm i -D jest ts-jest @types/jest
   ]
 }
 ```
-
+`Launch current` is convenient for trying a single TS file (such as those in `src/notes`). `Launch index` always launches the main entry point.
 
 > (Optional) Optimize the JS file with webpack bundling
-The genrated JS files are not yet optimized.
+The generated JS files are not yet optimized.
 ```
 npm i -D webpack webpack-cli typescript ts-loader
 npm i -D babel-loader @babel/core @babel/preset-env
@@ -62,19 +74,21 @@ node ./dist/bundle.js
 ```
 
 > (Optional) Compile to ES6 modules
-ES6 has `import/export` syntax but it's experimental in Node.js. `commonjs` module has `require/module.import`.
+ES6 has `import/export` syntax. `commonjs` module has `require/module.exports`.
 * Add `"type": "module",` to package.json
 * Set `"module": "ES6"` in tsconfig.json
 * In all the TS source files, the imports statement must include `.js` extensions
 * Run node with the experimental flag
 ```
 tsc -p tsconfig.es6.json
-node --experimental-modules ./dist/index.js
+node ./dist/index.js
 ```
 
-If you compile as ES6 module but run without experimental flag, the will be syntax error such as `SyntaxError: Cannot use import statement outside a module`.
+> Note: The `--experimental-modules` flag was required in older Node.js versions but has been stable since Node.js v12 and is no longer needed.
 
-> Run with nodeamon watch mode
+If you compile as an ES6 module but run without `"type": "module"` in package.json, there will be a syntax error: `SyntaxError: Cannot use import statement outside a module`.
+
+> Run with nodemon watch mode
 ```
 npm i -D ts-node nodemon
 # Add package.json script
