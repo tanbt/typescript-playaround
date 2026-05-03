@@ -1,3 +1,9 @@
+# Prepare
+Run this to upgrade all dependencies with latest version, if you want.
+```
+npx npm-check-updates -u
+```
+
 # Init
 ```
 npm i -D typescript

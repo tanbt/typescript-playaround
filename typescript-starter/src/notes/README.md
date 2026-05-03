@@ -1,0 +1,1 @@
+This folder is for my personal exercies with Typescript, you can delete it.
